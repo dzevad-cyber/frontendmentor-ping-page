@@ -1,0 +1,22 @@
+:root {
+  --width-mobile: 37.5rem;
+  --width-desktop: 144rem;
+
+  // colors
+  --clr-prim-blue: hsl(223, 87%, 63%);
+
+  --clr-sec-pale-blue: hsl(223, 100%, 88%);
+  --clr-sec-light-red: hsl(354, 100%, 66%);
+
+  // typography
+  --fs-body: 2rem;
+  --fs-base: 1.6rem;
+  --fs-small-text: 1.4rem;
+  --fs-copyright: 1.1rem;
+
+  --ff-libre-franklin: 'Libre Franklin', sans-serif;
+
+  --fw-300: 300;
+  --fw-600: 600;
+  --fw-700: 700;
+}

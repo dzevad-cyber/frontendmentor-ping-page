@@ -1,0 +1,18 @@
+{
+  "name": "ping-coming-soon-page-master",
+  "version": "1.0.0",
+  "description": "![Design preview for the Ping coming soon page coding challenge](./design/desktop-preview.jpg)",
+  "scripts": {
+    "dev": "parcel ./src/index.html",
+    "build": "rm -rf ./dist & parcel build ./src/index.html --public-url=./",
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.3.2",
+    "gh-pages": "^3.2.3",
+    "parcel": "^2.3.2"
+  }
+}

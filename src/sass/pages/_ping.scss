@@ -1,0 +1,40 @@
+.page-ping {
+  display: grid;
+  justify-items: center;
+  row-gap: 5rem;
+
+  font-size: var(--fs-base);
+}
+
+.header {
+  display: grid;
+  justify-items: center;
+
+  &__logo {
+    width: min(100%, 130px);
+  }
+}
+
+.ping {
+  display: grid;
+  justify-items: center;
+  row-gap: 3rem;
+
+  &__email {
+    display: grid;
+    justify-items: center;
+  }
+  background-color: tomato;
+}
+
+.footer {
+  &__icon-list {
+    display: grid;
+    grid-auto-flow: column;
+    justify-items: center;
+  }
+
+  &__copyright {
+    font-size: var(--fs-copyright);
+  }
+}
