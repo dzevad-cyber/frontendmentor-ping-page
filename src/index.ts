@@ -25,7 +25,10 @@ form.addEventListener('submit', (e): void => {
   e.preventDefault();
 
   // validate email input
-  if (!emailValidator.validate(email)) {
+  if (email === '') {
+    emailErrorEl.innerHTML =
+      'Whoops! It looks like you forgot to add your email';
+  } else if (!emailValidator.validate(email)) {
     emailErrorEl.innerHTML = 'Please provide valid email address.';
   } else {
     emailErrorEl.innerHTML = '';
