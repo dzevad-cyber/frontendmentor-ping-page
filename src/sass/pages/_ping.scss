@@ -58,7 +58,7 @@
 
 .footer {
   display: grid;
-  // row-gap: 1.5rem;
+  row-gap: 1.5rem;
   padding-bottom: 2rem;
   padding-top: 3rem;
   grid-auto-rows: min-content;
@@ -69,9 +69,13 @@
     justify-items: center;
   }
 
-  &__icon-item > svg {
-    width: 25px;
-    height: 25px;
+  &__icon-item > .svg-container > svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  &__icon-item:hover > svg > .path {
+    fill: var(--clr-bg-body);
   }
 
   &__copyright {
@@ -89,7 +93,7 @@
   &__error {
     color: var(--clr-sec-light-red);
     padding-left: 2.5rem;
-    font-size: var(--fs-small-text);
+    font-size: var(--fs-error-text);
     padding-top: 0.5rem;
   }
 
@@ -131,4 +135,28 @@
 
 .email-form__input-box--error {
   border: 1px solid var(--clr-sec-light-red);
+}
+
+.svg-container {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  outline: 1px solid var(--clr-sec-pale-blue);
+  cursor: pointer;
+  transition: background-color 0.2s ease, outline 0.2s ease;
+
+  &:hover {
+    background-color: var(--clr-prim-blue);
+    outline: none;
+  }
+
+  & > svg > path {
+    transition: fill 0.2s ease;
+  }
+
+  &:hover > svg > path {
+    fill: var(--clr-bg-body);
+  }
 }
