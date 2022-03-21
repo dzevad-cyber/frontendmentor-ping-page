@@ -1,40 +1,134 @@
+@use '../abstracts/mixins' as *;
+
 .page-ping {
   display: grid;
   justify-items: center;
-  row-gap: 5rem;
+  padding: 0 2rem;
 
   font-size: var(--fs-base);
+  background-color: var(--clr-bg-body);
 }
 
 .header {
   display: grid;
+  grid-auto-rows: min-content;
   justify-items: center;
 
+  padding-top: 5rem;
+
   &__logo {
-    width: min(100%, 130px);
+    width: min(100%, 100px);
+    padding: 2rem 0;
+  }
+
+  &__title {
+    font-size: clamp(2.5rem, 1.5rem + 2.5vw, 3.5rem);
+    font-weight: var(--fw-300);
+    color: var(--clr-title);
+    text-align: center;
+
+    &--strong {
+      color: var(--clr-prim-black);
+      font-weight: var(--fw-700);
+    }
+  }
+
+  &__subtitle {
+    font-size: var(--fs-small-text);
+    font-size: var(--fs-base);
+    font-weight: var(--fw-400);
+    letter-spacing: 0.5px;
+    text-align: center;
   }
 }
 
 .ping {
   display: grid;
-  justify-items: center;
-  row-gap: 3rem;
+  row-gap: 5rem;
 
   &__email {
     display: grid;
-    justify-items: center;
   }
-  background-color: tomato;
+
+  &__banner {
+    width: min(100%, 500px);
+    justify-self: center;
+  }
 }
 
 .footer {
+  display: grid;
+  // row-gap: 1.5rem;
+  padding-bottom: 2rem;
+  padding-top: 3rem;
+  grid-auto-rows: min-content;
+
   &__icon-list {
     display: grid;
     grid-auto-flow: column;
     justify-items: center;
   }
 
+  &__icon-item > svg {
+    width: 25px;
+    height: 25px;
+  }
+
   &__copyright {
     font-size: var(--fs-copyright);
   }
+}
+
+.email-form {
+  display: grid;
+  row-gap: 1.5rem;
+  justify-self: center;
+  width: min(80%, 500px);
+  padding-top: 3rem;
+
+  &__error {
+    color: var(--clr-sec-light-red);
+    padding-left: 2.5rem;
+    font-size: var(--fs-small-text);
+    padding-top: 0.5rem;
+  }
+
+  &__input-box {
+    display: grid;
+  }
+
+  &__field {
+    all: unset;
+
+    border: 1px solid var(--clr-sec-pale-blue);
+    padding: 0.5rem 2rem;
+    border-radius: 50px;
+
+    &::placeholder {
+      color: var(--clr-sec-pale-blue);
+      font-size: var(--fs-small-text);
+    }
+  }
+
+  &__btn-submit {
+    all: unset;
+
+    background-color: var(--clr-prim-blue);
+    color: var(--clr-bg-body);
+    border-radius: 50px;
+    text-align: center;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    align-self: start;
+  }
+
+  @include mq(medium) {
+    grid-template-columns: 2fr 1fr;
+    align-content: center;
+    column-gap: 2rem;
+  }
+}
+
+.email-form__input-box--error {
+  border: 1px solid var(--clr-sec-light-red);
 }
